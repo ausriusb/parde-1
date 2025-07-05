@@ -1,0 +1,185 @@
+/*
+Men's Choice – Kataloginis puslapis (pradinė struktūra)
+Struktūra:
+- index.html
+- katalogas.html
+- kontaktai.html
+- styles.css
+*/
+
+
+/* === index.html === */
+
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Men's Choice – Pradinis</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Men's Choice</h1>
+    <nav>
+      <a href="index.html">Pradžia</a>
+      <a href="katalogas.html">Katalogas</a>
+      <a href="kontaktai.html">Kontaktai</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h2>Stilius kiekvienai progai</h2>
+      <p>Kostiumai, marškiniai, batai ir dar daugiau – viskas stilingam vyrui.</p>
+      <a href="katalogas.html" class="btn">Peržiūrėti katalogą</a>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Men's Choice. Visos teisės saugomos.</p>
+  </footer>
+</body>
+</html>
+
+
+/* === katalogas.html === */
+
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Katalogas – Men's Choice</title>
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    function filterCategory(category) {
+      const allSections = document.querySelectorAll('.category-section');
+      allSections.forEach(sec => {
+        sec.style.display = category === 'all' || sec.dataset.category === category ? 'block' : 'none';
+      });
+    }
+  </script>
+</head>
+<body>
+  <header>
+    <h1>Katalogas</h1>
+    <nav>
+      <a href="index.html">Pradžia</a>
+      <a href="katalogas.html">Katalogas</a>
+      <a href="kontaktai.html">Kontaktai</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="filter-bar">
+      <button onclick="filterCategory('all')">Visos kategorijos</button>
+      <button onclick="filterCategory('kostiumai')">Kostiumai</button>
+      <button onclick="filterCategory('marskiniai')">Marškiniai</button>
+      <button onclick="filterCategory('avalynė')">Avalynė</button>
+      <button onclick="filterCategory('kelnės')">Kelnės</button>
+      <button onclick="filterCategory('polo')">Polo</button>
+      <button onclick="filterCategory('aksesuarai')">Aksesuarai</button>
+    </div>
+
+    <section class="gallery">
+      <div class="category-section" data-category="kostiumai">
+        <h2>Kostiumai</h2>
+        <div class="gallery-grid">
+          <div>
+            <img src="https://www.facebook.com/menschoice2/photos/a.295445080634792/1523663211580069" alt="Kostiumas">
+            <p>Trijų dalių slim modelio kostiumas – 50% vilna, 20% viskozė, 30% poliesteris. Dydžiai 44–58.</p>
+          </div>
+          <div>
+            <img src="https://www.facebook.com/menschoice2/photos/a.295445080634792/1399875693958822" alt="Kostiumas">
+            <p>Klasikinis 2 dalių modelis – 68% poliesteris, 30% viskozė, 2% elastanas. Dydžiai iki 72.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="category-section" data-category="marskiniai">
+        <h2>Marškiniai</h2>
+        <div class="gallery-grid">
+          <div>
+            <img src="https://www.facebook.com/menschoice2/photos/a.295445080634792/1307309579882101" alt="Marškiniai">
+            <p>Laisvalaikio tipo marškiniai trumpomis/ilgomis rankovėmis, 100% medvilnė. Slim modelis, dydžiai M–2XL.</p>
+          </div>
+          <div>
+            <img src="https://www.facebook.com/menschoice2/photos/a.295445080634792/1281193182493741" alt="Marškiniai">
+            <p>Balti smokinginiai marškiniai su juodomis sąsagomis. 80% medvilnė, 20% poliesteris. Dydžiai S–2XL.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="category-section" data-category="avalynė">
+        <h2>Avalynė</h2>
+        <div class="gallery-grid">
+          <div>
+            <img src="https://www.facebook.com/menschoice2/photos/a.295445080634792/1550184788927911" alt="Klasikiniai batai">
+            <p>Odiniai klasikinio tipo su raišteliais. Įvairių spalvų ir formų. Oda / versta oda / kančiuko padas.</p>
+          </div>
+          <div>
+            <img src="https://www.facebook.com/menschoice2/photos/a.295445080634792/1512548939358163" alt="Lakininiai batai">
+            <p>Juodi lakiniai batai prie smokingo (ne oda). Elegantiškam įvaizdžiui.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="category-section" data-category="kelnės">
+        <h2>Kelnės</h2>
+        <div class="gallery-grid">
+          <div>
+            <img src="https://www.facebook.com/menschoice2/photos/a.295445080634792/1572670860012637" alt="Kelnės">
+            <p>Slim / regular / super slim kirpimo kelnės be kanto. 65% viskozė, 3% likra, 32% nailonas. Dydžiai 29–42.</p>
+          </div>
+          <div>
+            <img src="https://www.facebook.com/menschoice2/photos/a.295445080634792/1568906547055735" alt="Kelnės">
+            <p>Didelių dydžių kelnės tiesaus kirpimo. 65% viskozė, 3% likra, 32% nailonas. Dydžiai 40–54.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="category-section" data-category="polo">
+        <h2>Polo marškinėliai</h2>
+        <div class="gallery-grid">
+          <div>
+            <img src="https://www.facebook.com/menschoice2/photos/a.295445080634792/1421206038492454" alt="Polo marškinėliai">
+            <p>Mažiausiai 25 skirtingų spalvų polo marškinėliai, kelių modelių. 85% medvilnė, 15% poliesteris.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="category-section" data-category="aksesuarai">
+        <h2>Aksesuarai</h2>
+        <div class="gallery-grid">
+          <div>
+            <img src="https://www.facebook.com/menschoice2/photos/a.295445080634792/1527986374481086" alt="Piniginės">
+            <p>100% odos piniginės – juodos arba rudos spalvos.</p>
+          </div>
+          <div>
+            <img src="https://www.facebook.com/menschoice2/photos/a.295445080634792/1535283277084729" alt="Petnešos">
+            <p>Stilingos petnešos įvairių spalvų ir dizainų. Derinamos prie klasikinės aprangos.</p>
+          </div>
+          <div>
+            <img src="https://www.facebook.com/menschoice2/photos/a.295445080634792/1437298303549894" alt="Kaklaraiščiai">
+            <p>Kaklaraiščiai įvairių spalvų ir raštų – tinka tiek verslui, tiek šventei.</p>
+          </div>
+          <div>
+            <img src="https://www.facebook.com/menschoice2/photos/a.295445080634792/1437298703549854" alt="Fantazijos">
+            <p>Kišeninės fantazijos – derinamos prie švarko ar smokingo. Elegancijai ir stiliui.</p>
+          </div>
+          <div>
+            <img src="https://www.facebook.com/menschoice2/photos/a.295445080634792/1437298863549838" alt="Peteliškės">
+            <p>Peteliškės įvairių spalvų ir faktūrų – klasikinėms ir išskirtinėms progoms.</p>
+          </div>
+        </div>
+      </div>
+
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Men's Choice. Visos teisės saugomos.</p>
+  </footer>
+</body>
+</html>
